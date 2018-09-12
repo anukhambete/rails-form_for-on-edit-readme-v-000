@@ -774,3 +774,43 @@ Started GET "/posts" for 207.237.107.209 at 2018-09-12 00:32:50 +0000
 Processing by PostsController#index as HTML
   [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
   Rendered posts/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 657ms (Views: 652.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 207.237.107.209 at 2018-09-12 00:32:51 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 207.237.107.209 at 2018-09-12 00:32:51 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 207.237.107.209 at 2018-09-12 00:32:51 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 207.237.107.209 at 2018-09-12 00:32:51 +0000
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 207.237.107.209 at 2018-09-12 00:32:51 +0000
+
+
+Started GET "/posts/new" for 207.237.107.209 at 2018-09-12 00:33:05 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 207.237.107.209 at 2018-09-12 00:33:17 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wrtjIDMLNR3WvZbJyylp09h3Slf1uNKPmUrD7o0yb0ebYtmLPz9oZRUy17S891WNodkt398Np2/9Xy+lDILDwg==", "title"=>"trial 1", "description"=>"trial 1 desc", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "trial 1"], ["description", "trial 1 desc"], ["created_at", "2018-09-12 00:33:17.688436"], ["updated_at", "2018-09-12 00:33:17.688436"]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.157.192:50515/posts/5
+Completed 302 Found in 15ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/posts/5" for 207.237.107.209 at 2018-09-12 00:33:17 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 17.2ms | ActiveRecord: 0.4ms)
