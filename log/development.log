@@ -814,3 +814,45 @@ Processing by PostsController#show as HTML
   [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
   Rendered posts/show.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 29ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 207.237.107.209 at 2018-09-12 00:33:24 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/4/edit" for 207.237.107.209 at 2018-09-12 00:33:34 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (63.8ms)
+Completed 200 OK in 86ms (Views: 83.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for 207.237.107.209 at 2018-09-12 00:33:44 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/5" for 207.237.107.209 at 2018-09-12 00:33:54 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bKdYuM6GVoMGQEUlJCaPojSbCCSFKXc8bdhjLQQ+yGs1fuITwrIL+8XPBFhT+LP8TTVvrK+cAtwJzY9mhY5k7g==", "post"=>{"title"=>"trial 1", "description"=>"trial 1 desc update"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  UPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["description", "trial 1 desc update"], ["updated_at", "2018-09-12 00:33:54.846940"], ["id", 5]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.157.192:50515/posts/5
+Completed 302 Found in 15ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/posts/5" for 207.237.107.209 at 2018-09-12 00:33:54 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.4ms)
